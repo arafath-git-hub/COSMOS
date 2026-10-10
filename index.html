@@ -1,0 +1,898 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Explore the Solar System with COSMOS, an interactive astronomy experience featuring planets, space missions, scientific discoveries, and interactive learning."
+  />
+
+  <meta name="theme-color" content="#050714">
+
+  <title>COSMOS — Explore the Universe</title>
+
+  <!-- Website Styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Orbitron:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+  <!-- Background Effects -->
+  <div class="space-background" aria-hidden="true">
+    <div class="stars-layer stars-layer-one"></div>
+    <div class="stars-layer stars-layer-two"></div>
+    <div class="nebula nebula-one"></div>
+    <div class="nebula nebula-two"></div>
+  </div>
+
+  <!-- Loading Screen -->
+  <div class="loading-screen" id="loadingScreen">
+    <div class="loading-content">
+      <div class="loading-orbit">
+        <span class="loading-planet"></span>
+      </div>
+
+      <h1 class="loading-title">COSMOS</h1>
+      <p class="loading-message">Preparing your universe...</p>
+
+      <div class="loading-track">
+        <div class="loading-progress"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-header" id="siteHeader">
+    <nav class="navbar container" aria-label="Main navigation">
+
+      <a class="brand" href="#home" aria-label="COSMOS home">
+        <span class="brand-symbol" aria-hidden="true">✦</span>
+        <span>COSMOS<span class="brand-period">.</span></span>
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="navLinks">
+        <a class="nav-link active" href="#home">Home</a>
+        <a class="nav-link" href="#explorer">Explorer</a>
+        <a class="nav-link" href="#planets">Planets</a>
+        <a class="nav-link" href="#missions">Missions</a>
+        <a class="nav-link" href="#science">Science Lab</a>
+        <a class="nav-link" href="#quiz">Quiz</a>
+      </div>
+
+      <button class="nav-search" id="openSearch" aria-label="Search COSMOS">
+        <span aria-hidden="true">⌕</span>
+        <span class="search-label">Search</span>
+        <span class="search-shortcut">/</span>
+      </button>
+
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="hero section" id="home">
+      <div class="hero-content container">
+
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <span class="status-dot"></span>
+            YOUR GATEWAY TO THE UNIVERSE
+          </div>
+
+          <h1 class="hero-title">
+            THE UNIVERSE
+            <span class="title-gradient">AWAITS YOU.</span>
+          </h1>
+
+          <p class="hero-description">
+            Journey beyond Earth. Discover extraordinary worlds,
+            explore distant planets, and uncover the science behind
+            our magnificent universe.
+          </p>
+
+          <div class="hero-actions">
+            <a class="button button-primary" href="#explorer">
+              <span>Begin Exploration</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <a class="button button-secondary" href="#missions">
+              Discover Space Missions
+            </a>
+          </div>
+
+          <div class="hero-facts">
+            <div class="hero-fact">
+              <span class="fact-number">8</span>
+              <span class="fact-label">PLANETS</span>
+            </div>
+
+            <div class="fact-divider"></div>
+
+            <div class="hero-fact">
+              <span class="fact-number">1</span>
+              <span class="fact-label">SOLAR SYSTEM</span>
+            </div>
+
+            <div class="fact-divider"></div>
+
+            <div class="hero-fact">
+              <span class="fact-number">∞</span>
+              <span class="fact-label">TO DISCOVER</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3D Scene Container -->
+        <div class="hero-visual" id="heroVisual">
+          <div class="visual-glow"></div>
+
+          <div class="orbit orbit-large"></div>
+          <div class="orbit orbit-medium"></div>
+          <div class="orbit orbit-small"></div>
+
+          <div class="hero-sun" aria-label="The Sun">
+            <div class="sun-corona"></div>
+            <div class="sun-core"></div>
+          </div>
+
+          <div class="hero-planet hero-planet-one" aria-label="Earth">
+            <span class="planet-ring"></span>
+          </div>
+
+          <div class="hero-planet hero-planet-two" aria-label="Mars"></div>
+          <div class="hero-planet hero-planet-three" aria-label="Saturn"></div>
+
+          <div class="floating-label label-earth">
+            <span class="label-line"></span>
+            <span>
+              <strong>EARTH</strong>
+              <small>Our home planet</small>
+            </span>
+          </div>
+
+          <div class="floating-label label-saturn">
+            <span class="label-line"></span>
+            <span>
+              <strong>SATURN</strong>
+              <small>The ringed giant</small>
+            </span>
+          </div>
+
+          <div class="visual-caption">
+            <span class="caption-dot"></span>
+            A UNIVERSE OF POSSIBILITIES
+          </div>
+        </div>
+
+      </div>
+
+      <a class="scroll-indicator" href="#explorer">
+        <span>SCROLL TO EXPLORE</span>
+        <span class="scroll-arrow" aria-hidden="true">↓</span>
+      </a>
+    </section>
+
+    <!-- Explorer Section -->
+    <section class="section explorer-section" id="explorer">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">INTERACTIVE UNIVERSE</div>
+          <h2>Explore the <span class="title-gradient">Solar System</span></h2>
+          <p>
+            Discover the worlds orbiting our Sun and learn what makes
+            each celestial body unique.
+          </p>
+        </div>
+
+        <div class="explorer-layout">
+
+          <div class="solar-system-panel glass-panel">
+            <div class="panel-topbar">
+              <div>
+                <span class="panel-kicker">LIVE SIMULATION</span>
+                <h3>Solar System Explorer</h3>
+              </div>
+
+              <span class="simulation-status">
+                <span class="status-dot"></span>
+                INTERACTIVE
+              </span>
+            </div>
+
+            <div
+              class="solar-system-canvas"
+              id="solarSystemCanvas"
+              aria-label="Interactive three-dimensional Solar System"
+              role="img"
+            >
+              <div class="canvas-loading" id="canvasLoading">
+                <div class="loading-orbit small-orbit">
+                  <span class="loading-planet"></span>
+                </div>
+                <p>Initializing Solar System...</p>
+              </div>
+
+              <!-- Three.js renders the Solar System here -->
+            </div>
+
+            <div class="simulation-controls">
+              <button class="control-button" id="resetView" type="button">
+                <span aria-hidden="true">⌂</span>
+                Reset View
+              </button>
+
+              <button class="control-button" id="toggleOrbits" type="button">
+                <span aria-hidden="true">◎</span>
+                <span>Toggle Orbits</span>
+              </button>
+
+              <button class="control-button" id="toggleAnimation" type="button">
+                <span aria-hidden="true">Ⅱ</span>
+                <span>Pause Motion</span>
+              </button>
+            </div>
+
+            <p class="panel-hint">
+              Drag to rotate · Scroll to zoom · Select a planet to explore
+            </p>
+          </div>
+
+          <aside class="planet-information glass-panel" id="planetInformation">
+            <div class="info-header">
+              <span class="panel-kicker">CELESTIAL PROFILE</span>
+              <span class="info-index" id="planetIndex">01 / 08</span>
+            </div>
+
+            <div class="info-planet-art" id="infoPlanetArt">
+              <div class="info-planet-sphere"></div>
+            </div>
+
+            <h3 id="infoPlanetName">Earth</h3>
+
+            <p class="planet-type" id="infoPlanetType">
+              Terrestrial Planet
+            </p>
+
+            <p class="planet-description" id="infoPlanetDescription">
+              Our home world is the only known planet to support life.
+              Its liquid-water oceans and protective atmosphere make it
+              a remarkable place in the Solar System.
+            </p>
+
+            <div class="planet-stats">
+              <div class="planet-stat">
+                <span>DIAMETER</span>
+                <strong id="infoDiameter">12,742 km</strong>
+              </div>
+
+              <div class="planet-stat">
+                <span>DAY LENGTH</span>
+                <strong id="infoDay">23.9 hours</strong>
+              </div>
+
+              <div class="planet-stat">
+                <span>YEAR LENGTH</span>
+                <strong id="infoYear">365.25 days</strong>
+              </div>
+
+              <div class="planet-stat">
+                <span>MOONS</span>
+                <strong id="infoMoons">1</strong>
+              </div>
+            </div>
+
+            <button class="button button-primary button-full" id="explorePlanet" type="button">
+              Explore This Planet
+              <span aria-hidden="true">↗</span>
+            </button>
+          </aside>
+
+        </div>
+
+        <!-- Planet Selector -->
+        <div class="planet-selector" id="planetSelector">
+          <button class="planet-select active" data-planet="earth" type="button">
+            <span class="planet-mini mini-earth"></span>
+            <span>Earth</span>
+          </button>
+
+          <button class="planet-select" data-planet="mercury" type="button">
+            <span class="planet-mini mini-mercury"></span>
+            <span>Mercury</span>
+          </button>
+
+          <button class="planet-select" data-planet="venus" type="button">
+            <span class="planet-mini mini-venus"></span>
+            <span>Venus</span>
+          </button>
+
+          <button class="planet-select" data-planet="mars" type="button">
+            <span class="planet-mini mini-mars"></span>
+            <span>Mars</span>
+          </button>
+
+          <button class="planet-select" data-planet="jupiter" type="button">
+            <span class="planet-mini mini-jupiter"></span>
+            <span>Jupiter</span>
+          </button>
+
+          <button class="planet-select" data-planet="saturn" type="button">
+            <span class="planet-mini mini-saturn"></span>
+            <span>Saturn</span>
+          </button>
+
+          <button class="planet-select" data-planet="uranus" type="button">
+            <span class="planet-mini mini-uranus"></span>
+            <span>Uranus</span>
+          </button>
+
+          <button class="planet-select" data-planet="neptune" type="button">
+            <span class="planet-mini mini-neptune"></span>
+            <span>Neptune</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Planet Discovery Section -->
+    <section class="section planets-section" id="planets">
+      <div class="container">
+
+        <div class="section-heading section-heading-row">
+          <div>
+            <div class="eyebrow">WORLDS BEYOND OURS</div>
+            <h2>Meet the <span class="title-gradient">Planets</span></h2>
+            <p>Eight planets. Eight different worlds. Countless discoveries.</p>
+          </div>
+
+          <a class="text-link" href="#explorer">
+            Open 3D Explorer <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="planet-cards" id="planetCards">
+
+          <article class="planet-card" data-planet-card="mercury">
+            <div class="planet-card-visual card-mercury">
+              <span class="card-planet"></span>
+              <span class="planet-number">01</span>
+            </div>
+            <div class="planet-card-content">
+              <span class="planet-category">TERRESTRIAL</span>
+              <h3>Mercury</h3>
+              <p>The smallest planet and the closest world to the Sun.</p>
+              <button class="text-link card-explore" data-planet="mercury" type="button">
+                Discover Mercury ↗
+              </button>
+            </div>
+          </article>
+
+          <article class="planet-card" data-planet-card="venus">
+            <div class="planet-card-visual card-venus">
+              <span class="card-planet"></span>
+              <span class="planet-number">02</span>
+            </div>
+            <div class="planet-card-content">
+              <span class="planet-category">TERRESTRIAL</span>
+              <h3>Venus</h3>
+              <p>A scorching world with a thick atmosphere and runaway greenhouse effect.</p>
+              <button class="text-link card-explore" data-planet="venus" type="button">
+                Discover Venus ↗
+              </button>
+            </div>
+          </article>
+
+          <article class="planet-card" data-planet-card="earth">
+            <div class="planet-card-visual card-earth">
+              <span class="card-planet"></span>
+              <span class="planet-number">03</span>
+            </div>
+            <div class="planet-card-content">
+              <span class="planet-category">TERRESTRIAL</span>
+              <h3>Earth</h3>
+              <p>A water-rich world and the only known home of life.</p>
+              <button class="text-link card-explore" data-planet="earth" type="button">
+                Discover Earth ↗
+              </button>
+            </div>
+          </article>
+
+          <article class="planet-card" data-planet-card="mars">
+            <div class="planet-card-visual card-mars">
+              <span class="card-planet"></span>
+              <span class="planet-number">04</span>
+            </div>
+            <div class="planet-card-content">
+              <span class="planet-category">TERRESTRIAL</span>
+              <h3>Mars</h3>
+              <p>A red desert world that may preserve clues to ancient life.</p>
+              <button class="text-link card-explore" data-planet="mars" type="button">
+                Discover Mars ↗
+              </button>
+            </div>
+          </article>
+
+          <article class="planet-card" data-planet-card="jupiter">
+            <div class="planet-card-visual card-jupiter">
+              <span class="card-planet"></span>
+              <span class="planet-number">05</span>
+            </div>
+            <div class="planet-card-content">
+              <span class="planet-category">GAS GIANT</span>
+              <h3>Jupiter</h3>
+              <p>A giant world with powerful storms and a fascinating moon system.</p>
+              <button class="text-link card-explore" data-planet="jupiter" type="button">
+                Discover Jupiter ↗
+              </button>
+            </div>
+          </article>
+
+          <article class="planet-card" data-planet-card="saturn">
+            <div class="planet-card-visual card-saturn">
+              <span class="card-planet"></span>
+              <span class="planet-number">06</span>
+            </div>
+            <div class="planet-card-content">
+              <span class="planet-category">GAS GIANT</span>
+              <h3>Saturn</h3>
+              <p>A magnificent gas giant surrounded by an extensive ring system.</p>
+              <button class="text-link card-explore" data-planet="saturn" type="button">
+                Discover Saturn ↗
+              </button>
+            </div>
+          </article>
+
+          <article class="planet-card" data-planet-card="uranus">
+            <div class="planet-card-visual card-uranus">
+              <span class="card-planet"></span>
+              <span class="planet-number">07</span>
+            </div>
+            <div class="planet-card-content">
+              <span class="planet-category">ICE GIANT</span>
+              <h3>Uranus</h3>
+              <p>An icy giant that rotates on its side compared with most planets.</p>
+              <button class="text-link card-explore" data-planet="uranus" type="button">
+                Discover Uranus ↗
+              </button>
+            </div>
+          </article>
+
+          <article class="planet-card" data-planet-card="neptune">
+            <div class="planet-card-visual card-neptune">
+              <span class="card-planet"></span>
+              <span class="planet-number">08</span>
+            </div>
+            <div class="planet-card-content">
+              <span class="planet-category">ICE GIANT</span>
+              <h3>Neptune</h3>
+              <p>A distant blue world with some of the fastest winds in the Solar System.</p>
+              <button class="text-link card-explore" data-planet="neptune" type="button">
+                Discover Neptune ↗
+              </button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Space Missions -->
+    <section class="section missions-section" id="missions">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">HUMANITY'S JOURNEY</div>
+          <h2>Beyond <span class="title-gradient">Earth</span></h2>
+          <p>
+            Meet the spacecraft and missions helping humanity understand
+            our place in the Solar System.
+          </p>
+        </div>
+
+        <div class="mission-feature glass-panel">
+          <div class="mission-feature-art">
+            <div class="mission-starfield"></div>
+            <div class="mission-planet"></div>
+            <div class="mission-spacecraft" aria-hidden="true">
+              <span class="craft-body"></span>
+              <span class="craft-panel craft-panel-left"></span>
+              <span class="craft-panel craft-panel-right"></span>
+              <span class="craft-antenna"></span>
+            </div>
+            <span class="mission-art-caption">EXPLORATION LOG · 001</span>
+          </div>
+
+          <div class="mission-feature-copy">
+            <span class="panel-kicker">FEATURED MISSION</span>
+            <h3>Voyager: Beyond the Solar System</h3>
+            <p>
+              Launched in 1977, Voyager 1 and Voyager 2 explored the outer
+              planets. Voyager 1 later entered interstellar space, carrying
+              scientific instruments and a message from Earth.
+            </p>
+            <a
+              class="button button-primary"
+              href="https://science.nasa.gov/mission/voyager/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Read NASA's Mission Story ↗
+            </a>
+          </div>
+        </div>
+
+        <div class="mission-cards">
+          <article class="mission-card glass-panel">
+            <span class="mission-card-number">01 / MOON</span>
+            <div class="mission-card-icon" aria-hidden="true">☾</div>
+            <h3>Apollo</h3>
+            <p>
+              The human spaceflight program that first landed astronauts
+              on the Moon.
+            </p>
+            <a
+              class="text-link"
+              href="https://www.nasa.gov/the-apollo-program/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Apollo ↗
+            </a>
+          </article>
+
+          <article class="mission-card glass-panel">
+            <span class="mission-card-number">02 / MARS</span>
+            <div class="mission-card-icon" aria-hidden="true">◉</div>
+            <h3>Perseverance</h3>
+            <p>
+              A Mars rover investigating ancient environments and collecting
+              samples for possible future return.
+            </p>
+            <a
+              class="text-link"
+              href="https://science.nasa.gov/mission/mars-2020-perseverance/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Perseverance ↗
+            </a>
+          </article>
+
+          <article class="mission-card glass-panel">
+            <span class="mission-card-number">03 / DEEP SPACE</span>
+            <div class="mission-card-icon" aria-hidden="true">✧</div>
+            <h3>James Webb</h3>
+            <p>
+              A space telescope observing the universe in infrared light
+              to investigate cosmic history.
+            </p>
+            <a
+              class="text-link"
+              href="https://science.nasa.gov/mission/webb/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Explore Webb ↗
+            </a>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Science Lab -->
+    <section class="section science-section" id="science">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">LEARN BY EXPERIMENTING</div>
+          <h2>The <span class="title-gradient">Science Lab</span></h2>
+          <p>
+            Explore astronomical concepts with interactive experiments
+            and simple scientific models.
+          </p>
+        </div>
+
+        <div class="science-grid">
+
+          <article class="science-card glass-panel">
+            <div class="science-visual gravity-visual" aria-hidden="true">
+              <div class="gravity-grid"></div>
+              <div class="gravity-body"></div>
+              <div class="gravity-orbit"></div>
+            </div>
+
+            <div class="science-card-content">
+              <span class="panel-kicker">EXPERIMENT 001</span>
+              <h3>Gravity Explorer</h3>
+              <p>
+                Discover how gravitational acceleration differs between
+                worlds in our Solar System.
+              </p>
+
+              <label class="range-label" for="gravityPlanet">
+                Choose a world
+              </label>
+
+              <select id="gravityPlanet" class="science-select">
+                <option value="earth">Earth</option>
+                <option value="moon">Moon</option>
+                <option value="mars">Mars</option>
+                <option value="jupiter">Jupiter</option>
+                <option value="neptune">Neptune</option>
+              </select>
+
+              <div class="experiment-result" aria-live="polite">
+                <span>Surface gravity</span>
+                <strong id="gravityResult">9.81 m/s²</strong>
+              </div>
+
+              <p class="science-note" id="gravityExplanation">
+                On Earth, objects near the surface accelerate downward
+                at approximately 9.81 m/s² when air resistance is ignored.
+              </p>
+            </div>
+          </article>
+
+          <article class="science-card glass-panel">
+            <div class="science-visual distance-visual" aria-hidden="true">
+              <div class="distance-sun"></div>
+              <div class="distance-line"></div>
+              <div class="distance-earth"></div>
+            </div>
+
+            <div class="science-card-content">
+              <span class="panel-kicker">EXPERIMENT 002</span>
+              <h3>Cosmic Distance</h3>
+              <p>
+                Change the distance and discover how far light travels
+                across space.
+              </p>
+
+              <label class="range-label" for="distanceSlider">
+                Distance from Earth
+              </label>
+
+              <input
+                id="distanceSlider"
+                class="science-range"
+                type="range"
+                min="1"
+                max="100"
+                value="10"
+              >
+
+              <div class="experiment-result">
+                <span>Distance</span>
+                <strong id="distanceResult">10 light-seconds</strong>
+              </div>
+
+              <p class="science-note" id="distanceExplanation" aria-live="polite">
+                Light travels approximately 299,792 kilometres per second.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="section quiz-section" id="quiz">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="eyebrow">TEST YOUR KNOWLEDGE</div>
+          <h2>Cosmic <span class="title-gradient">Challenge</span></h2>
+          <p>
+            Think you know the universe? Take the challenge and find out.
+          </p>
+        </div>
+
+        <div class="quiz-container glass-panel" id="quizContainer">
+          <div class="quiz-topbar">
+            <span class="panel-kicker">ASTRONOMY QUIZ</span>
+            <span class="quiz-progress-label" id="quizProgressLabel">
+              Question 1 of 5
+            </span>
+          </div>
+
+          <div class="quiz-progress-track">
+            <div class="quiz-progress-bar" id="quizProgressBar"></div>
+          </div>
+
+          <div class="quiz-content" id="quizContent">
+            <span class="quiz-question-number">QUESTION 01</span>
+
+            <h3 id="quizQuestion">
+              Which planet is known as the Red Planet?
+            </h3>
+
+            <div class="quiz-options" id="quizOptions">
+              <button class="quiz-option" data-answer="0" type="button">
+                <span class="option-letter">A</span>
+                <span>Venus</span>
+              </button>
+
+              <button class="quiz-option" data-answer="1" type="button">
+                <span class="option-letter">B</span>
+                <span>Mars</span>
+              </button>
+
+              <button class="quiz-option" data-answer="2" type="button">
+                <span class="option-letter">C</span>
+                <span>Jupiter</span>
+              </button>
+
+              <button class="quiz-option" data-answer="3" type="button">
+                <span class="option-letter">D</span>
+                <span>Mercury</span>
+              </button>
+            </div>
+
+            <p class="quiz-feedback" id="quizFeedback" aria-live="polite"></p>
+
+            <div class="quiz-footer">
+              <span class="quiz-score">Score: <strong id="quizScore">0</strong></span>
+
+              <button class="button button-primary" id="nextQuestion" type="button" disabled>
+                Next Question →
+              </button>
+            </div>
+          </div>
+
+          <div class="quiz-result" id="quizResult" hidden>
+            <div class="quiz-result-icon" aria-hidden="true">✦</div>
+            <h3>Mission Complete!</h3>
+            <p id="quizFinalScore">You scored 0 out of 5.</p>
+            <button class="button button-primary" id="restartQuiz" type="button">
+              Try Again ↻
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Search Modal -->
+    <div
+      class="search-overlay"
+      id="searchOverlay"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="searchTitle"
+      hidden
+    >
+      <div class="search-dialog glass-panel">
+        <div class="search-dialog-header">
+          <h2 id="searchTitle">Explore COSMOS</h2>
+          <button class="icon-button" id="closeSearch" type="button" aria-label="Close search">
+            ✕
+          </button>
+        </div>
+
+        <label class="visually-hidden" for="siteSearchInput">Search planets and sections</label>
+        <input
+          id="siteSearchInput"
+          class="search-input"
+          type="search"
+          placeholder="Search planets, missions, science..."
+          autocomplete="off"
+        >
+
+        <div class="search-results" id="searchResults" aria-live="polite">
+          <p class="search-hint">Try searching for Mars, Saturn, missions, or science.</p>
+        </div>
+
+        <p class="search-footer">Press ESC to close</p>
+      </div>
+    </div>
+
+    <!-- Planet Details Modal -->
+    <div
+      class="planet-modal-overlay"
+      id="planetModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="modalPlanetName"
+      hidden
+    >
+      <article class="planet-modal glass-panel">
+        <button class="icon-button modal-close" id="closePlanetModal" type="button" aria-label="Close planet details">
+          ✕
+        </button>
+
+        <div class="modal-planet-art" id="modalPlanetArt">
+          <div class="info-planet-sphere"></div>
+        </div>
+
+        <span class="panel-kicker" id="modalPlanetType">PLANET PROFILE</span>
+        <h2 id="modalPlanetName">Earth</h2>
+        <p id="modalPlanetDescription"></p>
+
+        <div class="modal-facts" id="modalPlanetFacts"></div>
+
+        <button class="button button-primary button-full" id="modalExploreButton" type="button">
+          Locate in 3D Explorer ↗
+        </button>
+      </article>
+    </div>
+
+    <!-- Final Call to Action -->
+    <section class="section final-cta">
+      <div class="container">
+        <div class="cta-content glass-panel">
+          <div class="eyebrow">THE JOURNEY NEVER ENDS</div>
+          <h2>Stay Curious.<br><span class="title-gradient">Look Beyond.</span></h2>
+          <p>
+            Every discovery begins with a question. Keep exploring,
+            keep learning, and never stop looking at the stars.
+          </p>
+          <a class="button button-primary" href="#home">
+            Return to the Beginning ↑
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a class="brand" href="#home">
+        <span class="brand-symbol" aria-hidden="true">✦</span>
+        <span>COSMOS<span class="brand-period">.</span></span>
+      </a>
+
+      <p>
+        Made for curious minds and future explorers.
+      </p>
+
+      <span class="footer-credit">
+        An educational astronomy experience.
+      </span>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button
+    class="back-to-top"
+    id="backToTop"
+    type="button"
+    aria-label="Back to top"
+  >
+    ↑
+  </button>
+
+  <!-- Main Application -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
